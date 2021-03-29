@@ -1,6 +1,6 @@
 # Capston-Design
 
-data 설명
+##data 설명
 
 NASDAQ : 나스닥 주가
 
