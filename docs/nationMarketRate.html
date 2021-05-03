@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/MarketCapitalization.css">
+  <script src="js/bootstrap.min.js"></script>
+  <style media="screen">
+    #tableHead {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #tableHead th {
+      position: sticky;
+      top: 0px;
+      background-color: #112d4e;
+      color: #f9f7f7;
+    }
+
+    table {
+      color: #112d4e;
+    }
+  </style>
+  <script type="text/javascript">
+    function numboer_format(num) {
+      return String(num).replace(/(\d)(?=?:\d{3})+(?!\d))/g, '$1,');
+    }
+
+    $(function() {
+      var parseName = "data/nationMarketRate.txt";
+
+      $.ajax({
+        url: parseName,
+        dataType: 'text',
+        success: function(data) {
+
+          var allRow = data.split(/\r?\n|\r/);
+          var table = '<table class="w-100 p-3 table table-hover">';
+
+          // table / thead / tr / th / td
+          var textLine = "";
+          textLine+=table;
+          for (var singleRow = 0; singleRow < allRow.length; singleRow++) {
+            var collapse = allRow[singleRow].split(";");
+            if (singleRow == 0) {
+              textLine += '<thead class="text-left" id="tableHead">';
+            } else if (singleRow == 1) {
+              textLine += '<tbody class="text-centor">';
+            }
+            textLine += '<tr>';
+            for (var count = 0; count < collapse.length; count++) {
+              if(count==3) continue;
+              if (singleRow == 0) {
+                textLine += '<th>' + collapse[count] + '</th>';
+              } else {
+                if (count == 1) {
+                  if (collapse[3] == "상승") {
+                    textLine += '<td class="text-danger">' + collapse[count] + '</td>';
+                  } else if (collapse[3] == "하락") {
+                    textLine += '<td class="text-primary">' + collapse[count] + '</td>';
+                  } else {
+                    textLine += '<td>' + collapse[count] + '</td>';
+                  }
+                }
+                else if (count == 2) {
+                  if (collapse[3] == "상승") {
+                    textLine += '<td class="text-danger">' +'▲ '+ collapse[count] + '</td>';
+                  } else if (collapse[3] == "하락") {
+                    textLine += '<td class="text-primary">' + '▼ '+collapse[count] + '</td>';
+                  } else {
+                    textLine += '<td>' + collapse[count] + '</td>';
+                  }
+                }
+                else if (count == 3) {
+                  if (collapse[3] == "상승") {
+                    textLine += '<td class="text-danger">'  + collapse[count]  + '</td>';
+                  } else if (collapse[3] == "하락") {
+                    textLine += '<td class="text-primary">' + collapse[count]  + '</td>';
+                  } else {
+                    textLine += '<td>' + '&nbsp' + '&nbsp' + collapse[count]  + '</td>';
+                  }
+                }
+                else {
+                  textLine += '<td>' + collapse[count] + '</td>';
+                }
+              }
+            }
+            textLine += '</tr>';
+            if (singleRow == 0) {
+              textLine += '</thead>';
+            }
+          }
+          textLine += '</tbody>';
+          textLine += '</table>';
+
+          $('#textArea').append(textLine);
+          $('#textArea').append("<br>");
+        }
+      });
+    });
+  </script>
+
+</head>
+
+<body>
+  <div id="textArea"></div>
+</body>
+
+</html>

@@ -1,8 +1,40 @@
-
 body {
   padding-top: 50px;
 }
 
+#MarketCapitalizationTable{
+    width: 100%;
+    height: 500px;
+}
+#MarketCapitalization{
+  width: 100%;
+  height: 100%;
+}
+.change{
+  margin-top: 50px;
+}
+#exchangeRateTable{
+    width: 100%;
+    height: 250px;
+}
+#exchangeRate{
+  width: 100%;
+  height: 100%;
+}#goldOilTable{
+    width: 100%;
+    height: 250px;
+}
+#goldOil{
+  width: 100%;
+  height: 100%;
+}#nationMarketRateTable{
+    width: 100%;
+    height: 250px;
+}
+#nationMarketRate{
+  width: 100%;
+  height: 100%;
+}
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -27,7 +59,6 @@ body {
   }
 }
 
-/* Sidebar navigation */
 .nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
@@ -44,11 +75,6 @@ body {
   background-color: #428bca;
 }
 
-
-/*
- * Main content
- */
-
 .main {
   padding: 20px;
 }
@@ -62,10 +88,6 @@ body {
   margin-top: 0;
 }
 
-
-/*
- * Placeholder dashboard ideas
- */
 
 .placeholders {
   margin-bottom: 30px;
