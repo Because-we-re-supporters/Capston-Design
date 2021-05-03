@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>증시 정보</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/dashboard.css" rel="stylesheet">
+
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript" src="js/dashboard.js"></script>
+  <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
+
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">CAPSTONE DESIGN</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="dashboard.html">증시 정보</a></li>
+          <li><a href="predic.html">주가 예측</a></li>
+          <li><a href="mock.html">모의 투자</a></li>
+        </ul>
+        <form class="navbar-form navbar-right">
+          <input type="text" class="form-control" placeholder="종목 검색...">
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="col-sm-3 col-md-2 sidebar">
+    <ul class="nav nav-sidebar">
+      <li class="active"><a href="#">오늘의 증시<span class="sr-only">(current)</span></a></li>
+      <li><a href="#">시가 총액</a></li>
+      <li><a href="#">환전 고시 환율</a></li>
+      <li><a href="#">국제 시장 환율</a></li>
+      <li><a href="#">유가·금시세</a></li>
+      <li><a href="">금리</a></li>
+      <li><a href="">원자제</a></li>
+    </ul>
+  </div>
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <h1 class="today">오늘의 증시</h1>
+    <div class="text-centor">
+      <div class="row placeholders">
+        <div class="col-xs-4 col-sm-3 placeholder">
+          <img src="image/KOSPI.png" class="img-responsive">
+          <h4>코스피</h4>
+          <span class="text-muted">3,181.47</span>
+        </div>
+        <div class="col-xs-4 col-sm-3 placeholder">
+          <img src="image/KOSDAQ.png" class="img-responsive">
+          <h4>코스닥</h4>
+          <span class="text-muted">998.27</span>
+        </div>
+        <div class="col-xs-4 col-sm-3 placeholder">
+          <img src="image/KPI200.png" class="img-responsive">
+          <h4>코스피 200</h4>
+          <span class="text-muted">427.48</span>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="total">시가 총액</h2>
+    <div id="MarketCapitalizationTable", class="Table1"></div>
+
+    <h2 class="change">환전 고시 환율</h2>
+    <div id="exchangeRateTable", class="Table"></div>
+
+    <h2 class="change2">국제 시장 환율</h2>
+    <div id="nationMarketRateTable", class="Table"></div>
+
+    <h2 class="oil">유가·금시세</h2>
+    <div id="goldOilTable", class="Table"></div>
+
+
+    <h2 class="rate">금리</h2>
+    <div id="interestRateTable", class="Table2"></div>
+
+    <h2 class="material">원자제</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+            <th>Header</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1,001</td>
+            <td>Lorem</td>
+            <td>ipsum</td>
+            <td>dolor</td>
+            <td>sit</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
