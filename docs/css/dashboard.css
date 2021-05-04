@@ -2,38 +2,24 @@ body {
   padding-top: 50px;
 }
 
-#MarketCapitalizationTable{
+.Table1{
     width: 100%;
     height: 500px;
 }
-#MarketCapitalization{
+.Table{
+    width: 100%;
+    height: 250px;
+}
+.Table2{
+    width: 100%;
+    height: 350px;
+}
+#innerTable{
   width: 100%;
   height: 100%;
 }
 .change{
   margin-top: 50px;
-}
-#exchangeRateTable{
-    width: 100%;
-    height: 250px;
-}
-#exchangeRate{
-  width: 100%;
-  height: 100%;
-}#goldOilTable{
-    width: 100%;
-    height: 250px;
-}
-#goldOil{
-  width: 100%;
-  height: 100%;
-}#nationMarketRateTable{
-    width: 100%;
-    height: 250px;
-}
-#nationMarketRate{
-  width: 100%;
-  height: 100%;
 }
 .sub-header {
   padding-bottom: 10px;

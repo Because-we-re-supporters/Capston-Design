@@ -6,7 +6,6 @@
   <title></title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <link href="css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/css/MarketCapitalization.css">
   <script src="js/bootstrap.min.js"></script>
   <style media="screen">
     #tableHead {
@@ -54,6 +53,8 @@
             textLine += '<tr>';
             for (var count = 0; count < collapse.length; count++) {
               if(count==3) continue;
+
+              if(singleRow==allRow.length-1) continue;
               if (singleRow == 0) {
                 textLine += '<th>' + collapse[count] + '</th>';
               } else {
