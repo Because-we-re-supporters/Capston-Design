@@ -17,7 +17,16 @@
   <script src="js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="js/dashboard.js"></script>
   <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
-
+  <script type="text/javascript">
+    function setVisible(a) {
+      if (a.length > 0) {
+        var stdPos = $(window).scrollTop() + $(window).height();
+        if (stdPos > a.offset().top) {
+          a.addClass('on');
+        }
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -47,47 +56,58 @@
 
   <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-      <li class="active"><a href="#">오늘의 증시<span class="sr-only">(current)</span></a></li>
-      <li><a href="#">시가 총액</a></li>
-      <li><a href="#">환전 고시 환율</a></li>
-      <li><a href="#">국제 시장 환율</a></li>
-      <li><a href="#">유가·금시세</a></li>
-      <li><a href="">금리</a></li>
-      <li><a href="">원자제</a></li>
+      <li class="active"><a href="#today">오늘의 증시<span class="sr-only">(current)</span></a></li>
+      <li><a href="#total">시가 총액</a></li>
+      <li><a href="#change">환전 고시 환율</a></li>
+      <li><a href="#change2">국제 시장 환율</a></li>
+      <li><a href="#oil">유가·금시세</a></li>
+      <li><a href="#rate">금리</a></li>
+      <li><a href="#materials">원자제</a></li>
     </ul>
   </div>
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-    <h1 class="today">오늘의 증시</h1>
-    <a href="chart.html">test</a>
-      <div id="chartTable", class="imageTable"></div>
-
-    <h2 class="total">시가 총액</h2>
-    <div id="MarketCapitalizationTable", class="Table1"></div>
-
-    <h2 class="change">환전 고시 환율</h2>
-    <div id="exchangeRateTable", class="Table"></div>
-
-    <h2 class="change2">국제 시장 환율</h2>
-    <div id="nationMarketRateTable", class="Table"></div>
-
-    <h2 class="oil">유가·금시세</h2>
-    <div id="goldOilTable", class="Table"></div>
-
-
-    <h2 class="rate">금리</h2>
-    <div id="interestRateTable", class="Table2"></div>
-
-    <h2 class="materials">원자제</h2>
+    <br id="today">
     <br>
-    <h4>에너지 선물</h4>
-    <a href="energy.html">test</a>
-    <a href="nonMetal.html">test</a>
-    <a href="crops.html">test</a>
-    <div id="energyTable", class="Table"></div>
-    <h4>비철금속 현물</h4>
-    <div id="nonMetalTable", class="Table2"></div>
-    <h4>농산물 선물</h4>
-    <div id="cropsTable", class="Table2"></div>
+    <h1>오늘의 증시</h1>
+    <br>
+    <div id="chartTable" , class="imageTable"></div>
+
+    <br id="total">
+    <br>
+    <h1>시가 총액</h1>
+    <br>
+    <div id="MarketCapitalizationTable" , class="Table1"></div>
+    <br id="change">
+    <br>
+    <h1 id="change">환전 고시 환율</h1>
+    <br>
+    <div id="exchangeRateTable" , class="Table"></div>
+    <br id="change2">
+    <br>
+    <h1 id="change2">국제 시장 환율</h1>
+    <br>
+    <div id="nationMarketRateTable" , class="Table"></div>
+    <br id="oil">
+    <br>
+    <h1 id="oil">유가·금시세</h1>
+    <br>
+    <div id="goldOilTable" , class="Table"></div>
+
+    <br id="rate">
+    <br>
+    <h1 id="rate">금리</h1>
+    <br>
+    <div id="interestRateTable" , class="Table2"></div>
+    <br id="materials">
+    <br>
+    <h1 id="materials">원자제</h1>
+    <br>
+    <h3>에너지 선물</h3>
+    <div id="energyTable" , class="Table"></div>
+    <h3>비철금속 현물</h3>
+    <div id="nonMetalTable" , class="Table2"></div>
+    <h3>농산물 선물</h3>
+    <div id="cropsTable" , class="Table2"></div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
