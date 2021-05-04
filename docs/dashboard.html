@@ -18,6 +18,9 @@
   <script type="text/javascript" src="js/dashboard.js"></script>
   <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
   <script type="text/javascript">
+  function searchData() {
+    location.href="error.html"
+  }
     function setVisible(a) {
       if (a.length > 0) {
         var stdPos = $(window).scrollTop() + $(window).height();
@@ -27,6 +30,11 @@
       }
     }
   </script>
+  <style media="screen">
+    #notVisible{
+      visibility:collapse;
+    }
+  </style>
 </head>
 
 <body>
@@ -48,7 +56,8 @@
           <li><a href="mock.html">모의 투자</a></li>
         </ul>
         <form class="navbar-form navbar-right">
-          <input type="text" class="form-control" placeholder="종목 검색...">
+        <input id="notVisible" type="text" class="form-control" placeholder="종목 검색...">
+          <input type="text" id="search" class="form-control" placeholder="종목 검색..." onkeypress="if( event.keyCode == 13 ){searchData();}" />
         </form>
       </div>
     </div>
