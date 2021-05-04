@@ -8,15 +8,170 @@
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <script src="js/bootstrap.min.js"></script>
   <style media="screen">
-
+    img {
+      margin-top: 10px;
+      width: 90%;
+      height: auto;
+    }
+    table{
+      margin-top: 5px;
+    }
   </style>
   <script type="text/javascript">
+    function numboer_format(num) {
+      return String(num).replace(/(\d)(?=?:\d{3})+(?!\d))/g, '$1,');
+    }
+
+    $(function() {
+      var parseName = "data/chart.txt";
+
+      $.ajax({
+        url: parseName,
+        dataType: 'text',
+        success: function(data) {
+
+          var allRow = data.split(/\r?\n|\r/);
+          var table = '<table class="table">';
+
+          var KOSPItext = "";
+          var KOSDAQtext = "";
+          var KOSPI200text = "";
+
+          KOSPItext += table;
+          KOSDAQtext += table;
+          KOSPI200text += table;
+
+          for (var singleRow = 0; singleRow < allRow.length; singleRow++) {
+            var collapse = allRow[singleRow].split(";");
+
+            if (singleRow == allRow.length - 1) continue;
+            if (singleRow == 0) {
+              KOSPItext += '<thead class="text-left" id="tableHead">';
+              KOSDAQtext += '<thead class="text-left" id="tableHead">';
+              KOSPI200text += '<thead class="text-left" id="tableHead">';
+            } else if (singleRow == 1) {
+              KOSPItext += '<tbody class="text-centor">';
+              KOSDAQtext += '<tbody class="text-centor">';
+              KOSPI200text += '<tbody class="text-centor">';
+            }
+
+            KOSPItext += '<tr>';
+            KOSDAQtext += '<tr>';
+            KOSPI200text += '<tr>';
+
+            for (var count = 0; count < collapse.length - 1; count++) {
+              if (singleRow == allRow.length - 1) continue;
+              if (singleRow == 0) {
+                continue;
+              } else {
+                if (collapse[0] == "코스피200") {
+                  if (count == 2) {
+                    if (collapse[4] == "상승") {
+                      KOSPI200text += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
+                    } else if (collapse[4] == "하락") {
+                      KOSPI200text += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+                    } else {
+                      KOSPI200text += '<td>' + collapse[count] + '</td>';
+                    }
+                  } else if (count != 0) {
+                    if (collapse[4] == "상승") {
+                      KOSPI200text += '<td class="text-danger">' + collapse[count] + '</td>';
+                    } else if (collapse[4] == "하락") {
+                      KOSPI200text += '<td class="text-primary">' + collapse[count] + '</td>';
+                    } else {
+                      KOSPI200text += '<td>' + collapse[count] + '</td>';
+                    }
+                  }
+                  else {
+                    KOSPI200text += '<td>' + collapse[count] + '</td>';
+                  }
+                } else if (collapse[0] == '코스피') {
+                  if (count == 2) {
+                    if (collapse[4] == "상승") {
+                      KOSPItext += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
+                    } else if (collapse[4] == "하락") {
+                      KOSPItext += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+                    } else {
+                      KOSPItext += '<td>' + collapse[count] + '</td>';
+                    }
+                  } else if (count != 0) {
+                    if (collapse[4] == "상승") {
+                      KOSPItext += '<td class="text-danger">' + collapse[count] + '</td>';
+                    } else if (collapse[4] == "하락") {
+                      KOSPItext += '<td class="text-primary">' + collapse[count] + '</td>';
+                    } else {
+                      KOSPItext += '<td>' + collapse[count] + '</td>';
+                    }
+                  }
+                  else {
+                    KOSPItext += '<td>' + collapse[count] + '</td>';
+                  }
+                } else if (collapse[0] == '코스닥') {
+                  if (count == 2) {
+                    if (collapse[4] == "상승") {
+                      KOSDAQtext += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
+                    } else if (collapse[4] == "하락") {
+                      KOSDAQtext += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+                    } else {
+                      KOSDAQtext += '<td>' + collapse[count] + '</td>';
+                    }
+                  } else if (count != 0) {
+                    if (collapse[4] == "상승") {
+                      KOSDAQtext += '<td class="text-danger">' + collapse[count] + '</td>';
+                    } else if (collapse[4] == "하락") {
+                      KOSDAQtext += '<td class="text-primary">' + collapse[count] + '</td>';
+                    } else {
+                      KOSDAQtext += '<td>' + collapse[count] + '</td>';
+                    }
+                  }
+                  else {
+                    KOSDAQtext += '<td>' + collapse[count] + '</td>';
+                  }
+                }
+              }
+            }
+            KOSPItext += '</tr>';
+            KOSPI200text += '</tr>';
+            KOSDAQtext += '</tr>';
+            if (singleRow == 0) {
+              KOSPItext += '</thead>';
+              KOSPI200text += '</thead>';
+              KOSDAQtext += '</thead>';
+            }
+          }
+          KOSPItext += '</tbody>';
+          KOSPItext += '</table>';
+          KOSPI200text += '</tbody>';
+          KOSPI200text += '</table>';
+          KOSDAQtext += '</tbody>';
+          KOSDAQtext += '</table>';
+
+          $('#KOSPItext').append(KOSPItext);
+          $('#KOSPI200text').append(KOSPI200text);
+          $('#KOSDAQtext').append(KOSDAQtext);
+        }
+      });
+
+    });
   </script>
 
 </head>
 
 <body>
-  <div id="chartArea"></div>
+  <div class="text-center">
+    <div class="col-xs-4">
+      <img src="image/KOSPI.jpg" class="img-responsive center-block">
+      <div class="text-centor" id="KOSPItext"></div>
+    </div>
+    <div class="col-xs-4">
+      <img src="image/KOSDAQ.jpg" class="img-responsive center-block">
+      <div class="text-centor" id="KOSDAQtext"></div>
+    </div>
+    <div class="col-xs-4">
+      <img src="image/KOSPI200.jpg" class="img-responsive center-block">
+      <div class="text-centor" id="KOSPI200text"></div>
+    </div>
+  </div>
 </body>
 
 </html>

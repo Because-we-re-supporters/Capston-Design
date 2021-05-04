@@ -1,7 +1,10 @@
 body {
   padding-top: 50px;
 }
-
+.imageTable{
+  width: 100%;
+  height: 300px;
+}
 .Table1{
     width: 100%;
     height: 500px;
@@ -72,20 +75,4 @@ body {
 }
 .main .page-header {
   margin-top: 0;
-}
-
-
-.placeholders {
-  margin-bottom: 30px;
-  text-align: center;
-}
-.placeholders h4 {
-  margin-bottom: 0;
-}
-.placeholder {
-  margin-bottom: 20px;
-}
-.placeholder img {
-  display: inline-block;
-  border-radius: 50%;
 }
