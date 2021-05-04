@@ -18,12 +18,18 @@
     <link href="index.js" rel="javascript">
 
     <script type="text/javascript">
-      $("#search").keydown(function(key){
-        if(key.keyCode == 13){
-          alert("error");
-          window.location.replace('error.html');}
-      });
+    function searchData() {
+      location.href="error.html"
+    }
     </script>
+    <style media="screen">
+      #notVisible{
+        visibility:collapse;
+      }
+      img{
+        width: 100%;
+      }
+    </style>
   </head>
   <body>
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -44,9 +50,9 @@
                 <li><a href="mock.html">모의 투자</a></li>
               </ul>
               <form class="navbar-form navbar-right">
-                <input id="search" type="text"class="form-control"placeholder="종목 검색..."/>
-              </form>
-            </div>
+              <input id="notVisible" type="text" class="form-control" placeholder="종목 검색...">
+                <input type="text" id="search" class="form-control" placeholder="종목 검색..." onkeypress="if( event.keyCode == 13 ){searchData();}" />
+              </form></div>
           </div>
         </nav>
 

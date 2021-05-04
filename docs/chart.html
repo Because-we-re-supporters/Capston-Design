@@ -14,6 +14,7 @@
       height: auto;
     }
     table{
+      width: 100%;
       margin-top: 5px;
     }
   </style>
@@ -67,65 +68,65 @@
                 if (collapse[0] == "코스피200") {
                   if (count == 2) {
                     if (collapse[4] == "상승") {
-                      KOSPI200text += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
+                      KOSPI200text += '<td class="text-danger"><h4>' + '▲ ' + collapse[count] + '</h4></td>';
                     } else if (collapse[4] == "하락") {
-                      KOSPI200text += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+                      KOSPI200text += '<td class="text-primary"><h4>' + '▼ ' + collapse[count] + '</h4></td>';
                     } else {
-                      KOSPI200text += '<td>' + collapse[count] + '</td>';
+                      KOSPI200text += '<td><h4>' + collapse[count] + '</h4></td>';
                     }
                   } else if (count != 0) {
                     if (collapse[4] == "상승") {
-                      KOSPI200text += '<td class="text-danger">' + collapse[count] + '</td>';
+                      KOSPI200text += '<td class="text-danger"><h4>' + collapse[count] + '</h4></td>';
                     } else if (collapse[4] == "하락") {
-                      KOSPI200text += '<td class="text-primary">' + collapse[count] + '</td>';
+                      KOSPI200text += '<td class="text-primary"><h4>' + collapse[count] + '</h4></td>';
                     } else {
-                      KOSPI200text += '<td>' + collapse[count] + '</td>';
+                      KOSPI200text += '<td><h4>' + collapse[count] + '</h4></td>';
                     }
                   }
                   else {
-                    KOSPI200text += '<td>' + collapse[count] + '</td>';
+                    KOSPI200text += '<td><h4>' + collapse[count] + '</h4></td>';
                   }
                 } else if (collapse[0] == '코스피') {
                   if (count == 2) {
                     if (collapse[4] == "상승") {
-                      KOSPItext += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
+                      KOSPItext += '<td class="text-danger"><h4>' + '▲ ' + collapse[count] + '</h4></td>';
                     } else if (collapse[4] == "하락") {
-                      KOSPItext += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+                      KOSPItext += '<td class="text-primary"><h4>' + '▼ ' + collapse[count] + '</h4></td>';
                     } else {
-                      KOSPItext += '<td>' + collapse[count] + '</td>';
+                      KOSPItext += '<td><h4>' + collapse[count] + '</h4></td>';
                     }
                   } else if (count != 0) {
                     if (collapse[4] == "상승") {
-                      KOSPItext += '<td class="text-danger">' + collapse[count] + '</td>';
+                      KOSPItext += '<td class="text-danger"><h4>' + collapse[count] + '</h4></td>';
                     } else if (collapse[4] == "하락") {
-                      KOSPItext += '<td class="text-primary">' + collapse[count] + '</td>';
+                      KOSPItext += '<td class="text-primary"><h4>' + collapse[count] + '</h4></td>';
                     } else {
-                      KOSPItext += '<td>' + collapse[count] + '</td>';
+                      KOSPItext += '<td><h4>' + collapse[count] + '</h4></td>';
                     }
                   }
                   else {
-                    KOSPItext += '<td>' + collapse[count] + '</td>';
+                    KOSPItext += '<td><h4>' + collapse[count] + '</h4></td>';
                   }
                 } else if (collapse[0] == '코스닥') {
                   if (count == 2) {
                     if (collapse[4] == "상승") {
-                      KOSDAQtext += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
+                      KOSDAQtext += '<td class="text-danger"><h4>' + '▲ ' + collapse[count] + '</h4></td>';
                     } else if (collapse[4] == "하락") {
-                      KOSDAQtext += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+                      KOSDAQtext += '<td class="text-primary"><h4>' + '▼ ' + collapse[count] + '</h4></td>';
                     } else {
-                      KOSDAQtext += '<td>' + collapse[count] + '</td>';
+                      KOSDAQtext += '<td><h4>' + collapse[count] + '</h4></td>';
                     }
                   } else if (count != 0) {
                     if (collapse[4] == "상승") {
-                      KOSDAQtext += '<td class="text-danger">' + collapse[count] + '</td>';
+                      KOSDAQtext += '<td class="text-danger"><h4>' + collapse[count] + '</h4></td>';
                     } else if (collapse[4] == "하락") {
-                      KOSDAQtext += '<td class="text-primary">' + collapse[count] + '</td>';
+                      KOSDAQtext += '<td class="text-primary"><h4>' + collapse[count] + '</h4></td>';
                     } else {
-                      KOSDAQtext += '<td>' + collapse[count] + '</td>';
+                      KOSDAQtext += '<td><h4>' + collapse[count] + '</h4></td>';
                     }
                   }
                   else {
-                    KOSDAQtext += '<td>' + collapse[count] + '</td>';
+                    KOSDAQtext += '<td><h4>' + collapse[count] + '</h4></td>';
                   }
                 }
               }
