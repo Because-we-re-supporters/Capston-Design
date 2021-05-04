@@ -58,25 +58,7 @@
   </div>
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <h1 class="today">오늘의 증시</h1>
-    <div class="text-centor">
-      <div class="row placeholders">
-        <div class="col-xs-4 col-sm-3 placeholder">
-          <img src="image/KOSPI.png" class="img-responsive">
-          <h4>코스피</h4>
-          <span class="text-muted">3,181.47</span>
-        </div>
-        <div class="col-xs-4 col-sm-3 placeholder">
-          <img src="image/KOSDAQ.png" class="img-responsive">
-          <h4>코스닥</h4>
-          <span class="text-muted">998.27</span>
-        </div>
-        <div class="col-xs-4 col-sm-3 placeholder">
-          <img src="image/KPI200.png" class="img-responsive">
-          <h4>코스피 200</h4>
-          <span class="text-muted">427.48</span>
-        </div>
-      </div>
-    </div>
+      <div id="chartTable", class="imageTable"></div>
 
     <h2 class="total">시가 총액</h2>
     <div id="MarketCapitalizationTable", class="Table1"></div>
@@ -94,29 +76,14 @@
     <h2 class="rate">금리</h2>
     <div id="interestRateTable", class="Table2"></div>
 
-    <h2 class="material">원자제</h2>
-    <div class="table-responsive">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-            <th>Header</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1,001</td>
-            <td>Lorem</td>
-            <td>ipsum</td>
-            <td>dolor</td>
-            <td>sit</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <h2 class="materials">원자제</h2>
+    <br>
+    <h4>에너지 선물</h4>
+    <div id="energyTable", class="Table"></div>
+    <h4>비철금속 현물</h4>
+    <div id="nonMetalTable", class="Table2"></div>
+    <h4>농산물 선물</h4>
+    <div id="cropsTable", class="Table2"></div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
