@@ -53,6 +53,8 @@
             }
             textLine += '<tr>';
             for (var count = 0; count < collapse.length; count++) {
+
+              if(singleRow==allRow.length-1) continue;
               if (singleRow == 0) {
                 textLine += '<th>' + collapse[count] + '</th>';
               } else {
