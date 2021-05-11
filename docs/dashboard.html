@@ -17,22 +17,26 @@
   <script src="js/jquery-3.6.0.min.js"></script>
   <script type="text/javascript" src="js/dashboard.js"></script>
   <!--<script src="js/ie-emulation-modes-warning.js"></script>-->
-  <script type="text/javascript">
-  function searchData() {
-    location.href="error.html"
-  }
-    function setVisible(a) {
-      if (a.length > 0) {
-        var stdPos = $(window).scrollTop() + $(window).height();
-        if (stdPos > a.offset().top) {
-          a.addClass('on');
-        }
-      }
-    }
-  </script>
+
   <style media="screen">
     #notVisible{
       visibility:collapse;
+    }
+    #tableHead {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    #tableHead th {
+      position: sticky;
+      top: 0px;
+      background-color: #112d4e;
+      color: #f9f7f7;
+    }
+
+    table {
+      color: #112d4e;
+
     }
   </style>
 </head>
@@ -77,46 +81,64 @@
   <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
     <br id="today">
     <br>
+
     <h1>오늘의 증시</h1>
     <br>
-    <div id="chartTable" , class="imageTable"></div>
+    <div class="text-center" style="overflow: auto" > 
+      <div class="col-xs-4" >
+        <img src="image/KOSPI.jpg" class="img-responsive center-block">
+        <div class="text-centor" id="KOSPItext"></div>
+        <div class="text-centor" id="KOSPItable"></div>
+      </div>
+      <div class="col-xs-4"  >
+        <img src="image/KOSDAQ.jpg" class="img-responsive center-block">
+        <div class="text-centor" id="KOSDAQtext"></div>
+        <div class="text-centor" id="KOSDAQtable"></div>
+      </div>
+      <div class="col-xs-4">
+        <img src="image/KOSPI200.jpg" class="img-responsive center-block">
+        <div class="text-centor" id="KOSPI200text"></div>
+
+      </div>
+    </div>
 
     <br id="total">
     <br>
     <h1>시가 총액</h1>
     <br>
-    <div id="MarketCapitalizationTable" , class="Table1"></div>
+    <div id="MarketCapitalizationTable" , class="Table1" style="overflow: auto"></div>
     <br id="change">
     <br>
     <h1 id="change">환전 고시 환율</h1>
     <br>
-    <div id="exchangeRateTable" , class="Table"></div>
+    <div id="exchangeRateTable" , class="Table" style="overflow: auto"></div>
     <br id="change2">
     <br>
     <h1 id="change2">국제 시장 환율</h1>
     <br>
-    <div id="nationMarketRateTable" , class="Table"></div>
+    <div id="nationMarketRateTable" , class="Table" style="overflow: auto"></div>
     <br id="oil">
     <br>
     <h1 id="oil">유가·금시세</h1>
     <br>
-    <div id="goldOilTable" , class="Table"></div>
+    <div id="goldOilTable" , class="Table" style="overflow: auto"></div>
 
     <br id="rate">
     <br>
     <h1 id="rate">금리</h1>
     <br>
-    <div id="interestRateTable" , class="Table2"></div>
+    <div id="interestRateTable" , class="Table2" style="overflow: auto"></div>
     <br id="materials">
     <br>
     <h1 id="materials">원자제</h1>
     <br>
+
     <h3>에너지 선물</h3>
-    <div id="energyTable" , class="Table"></div>
+    <div id="energyTable" , class="Table" style="overflow: auto"></div>
     <h3>비철금속 현물</h3>
-    <div id="nonMetalTable" , class="Table2"></div>
+    <div id="nonMetalTable" , class="Table2" style="overflow: auto"></div>
     <h3>농산물 선물</h3>
-    <div id="cropsTable" , class="Table2"></div>
+    <div id="cropsTable" , class="Table2" style="overflow: auto"></div>
   </div>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
