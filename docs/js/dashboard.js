@@ -462,7 +462,7 @@ $(document).ready(function() {
     }
   });
   var interestRate = $.ajax({
-    url: "data/interestRate.txt",
+    url: "data/rate.txt",
     dataType: 'text',
     success: function(data) {
 
@@ -474,7 +474,6 @@ $(document).ready(function() {
       textLine += table;
       for (var singleRow = 0; singleRow < allRow.length; singleRow++) {
         var collapse = allRow[singleRow].split(";");
-        if (singleRow == allRow.length - 1) continue;
         if (singleRow == 0) {
           textLine += '<thead class="text-left" id="tableHead">';
         } else if (singleRow == 1) {
@@ -482,27 +481,27 @@ $(document).ready(function() {
         }
         textLine += '<tr>';
         for (var count = 0; count < collapse.length; count++) {
-          if (count == 3) continue;
+
 
           if (singleRow == allRow.length - 1) continue;
           if (singleRow == 0) {
             textLine += '<th>' + collapse[count] + '</th>';
           } else {
-            if (count == 1) {
-              if (collapse[3] == "상승") {
+            if (count == 2) {
+              if (collapse[4] == "상승") {
                 textLine += '<td class="text-danger">' + collapse[count] + '</td>';
-              } else if (collapse[3] == "하락") {
+              } else if (collapse[4] == "하락") {
                 textLine += '<td class="text-primary">' + collapse[count] + '</td>';
               } else {
                 textLine += '<td>' + collapse[count] + '</td>';
               }
-            } else if (count == 2) {
-              if (collapse[3] == "상승") {
-                textLine += '<td class="text-danger">' + '▲ ' + collapse[count] + '</td>';
-              } else if (collapse[3] == "하락") {
-                textLine += '<td class="text-primary">' + '▼ ' + collapse[count] + '</td>';
+            } else if (count == 3) {
+              if (collapse[4] == "상승") {
+                textLine += '<td class="text-danger">' + '▲ '+ collapse[count] + '</td>';
+              } else if (collapse[4] == "하락") {
+                textLine += '<td class="text-primary">'  + '▼ '+ collapse[count] + '</td>';
               } else {
-                textLine += '<td>' + collapse[count] + '</td>';
+                textLine += '<td> - </td>';
               }
             } else {
               textLine += '<td>' + collapse[count] + '</td>';
