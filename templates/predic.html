@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Dashboard Template for Bootstrap</title>
+
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/css/base.css" rel="stylesheet">
+  <link href="../static/css/dashboard.css" rel="stylesheet">
+
+  <style media="screen">
+    #notVisible {
+      visibility: collapse;
+    }
+  </style>
+  <script type="text/javascript">
+    function press(f) {
+      if (f.keyCode == 13) {
+        formname.submit(); //formname에 사용자가 지정한 form의 name입력
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index">CAPSTONE DESIGN</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/dashboard">증시 정보</a></li>
+          <li><a href="/analysis">분석 결과</a></li>
+          <li><a href="/predic">주가 예측</a></li>
+          <li><a href="/mock">모의 투자</a></li>
+        </ul>
+        <form method="get" name="formname" action="/search" class="navbar-form navbar-right">
+          <input type="input" id="search" class="form-control" placeholder="종목 검색..." required name="search" onkeypress="JavaScript:press(this.form)" />
+        </form>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container-fluid">
+    <div class="row">
+    </div>
+    <div class="main">
+        <br>
+        <br>
+      <h1 class="page-header">종목별 주가 예측</h1>
+      <div class="row placeholders">
+        <div class="col-lg-6 placeholder">
+            <h4>KOSPI</h4>
+            <div id = "kospiTable"></div>
+        </div>
+        <div class="col-lg-6 placeholder">
+          <h4>KOSDAQ</h4>
+          <div id = "kosdaqTable"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/d3.js"></script>
+  <script src="../static/js/d3.min.js"></script>
+  <script src="../static/js/plotly-latest.min.js"></script>
+  <script src="../static/js/predict.js"></script>
+  <!--
+  IE10 viewport hack for Surface/desktop Windows 8 bug
+     <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+  <script src="../static/js/ie-emulation-modes-warning.js"></script>
+
+     -->
+</body>
+
+</html>
