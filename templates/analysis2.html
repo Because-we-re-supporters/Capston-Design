@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>CAPSTONE DESIGN</title>
+
+  <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+  <script src="../static/js/ie-emulation-modes-warning.js"></script>
+
+  <link href="../static/css/analysis.css" rel="stylesheet">
+  <link href="../static/css/base.css" rel="stylesheet">
+  <link href="../static/js/index.js" rel="javascript">
+
+
+  </script>
+  <style media="screen">
+    #notVisible {
+      visibility: collapse;
+    }
+
+    img {
+      width: 100%;
+    }
+  </style>
+  <script type="text/javascript">
+  function showKOSPI(){
+    location.href="/analysis";
+  }
+  function showKOSDAQ(){
+    location.href="/analysis2";
+  }
+    function press(f) {
+      if (f.keyCode == 13) {
+        formname.submit(); //formname에 사용자가 지정한 form의 name입력
+      }
+    }
+  </script>
+</head>
+
+<body>
+  <nav class="navbar navber-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/index">CAPSTONE DESIGN</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="/dashboard">증시 정보</a></li>
+          <li><a href="/analysis">분석 결과</a></li>
+          <li><a href="/predic">주가 예측</a></li>
+          <li><a href="/mock">모의 투자</a></li>
+        </ul>
+        <form method="get" name="formname" action="/search" class="navbar-form navbar-right">
+          <input type="input" id="search" class="form-control" placeholder="종목 검색..." required name="search" onkeypress="JavaScript:press(this.form)" />
+        </form>
+      </div>
+    </div>
+  </nav>
+  </div>
+  </div>
+  <div class="main">
+    <div class="btn-class text-centor">
+    <button onclick='showKOSPI()' class='btn' type="button" name="button" id="kospiOFF">kospi</button>
+    <button onclick='showKOSDAQ()' class='btn' type="button" name="button" id="kosdaqON">kosdaq</button>
+  </div>
+  <div class="image">
+    <img id="plotIMG" src="../static/data/plot/kosdaq_.png"/>
+  </div>
+  </div>
+  <script src="../static/js/jquery-3.6.0.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/vendor/holder.js"></script>
+  <script src="../static/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>
